@@ -49,15 +49,82 @@ export const Hero = () => {
             </div>
           </div>
           <div className="relative animate-fade-up [animation-delay:600ms]">
-            <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-3xl blur-xl"></div>
+            {/* Main Dashboard Container */}
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent rounded-3xl backdrop-blur-sm"></div>
-              <img
-                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
-                alt="Financial management dashboard"
-                className="relative rounded-3xl shadow-2xl border border-gray-200/50"
-              />
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-3xl blur-xl"></div>
+              <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-gray-200/50 p-6">
+                {/* Floating Stats Cards */}
+                <div className="absolute -top-8 left-4 bg-white rounded-xl shadow-lg p-3 animate-fade-up [animation-delay:800ms]">
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                      <span className="text-primary text-sm">€</span>
+                    </div>
+                    <div>
+                      <div className="text-sm font-medium">Monthly Revenue</div>
+                      <div className="text-lg font-bold text-primary">€4,379.02</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="absolute -right-4 top-1/4 bg-white rounded-xl shadow-lg p-3 animate-fade-up [animation-delay:1000ms]">
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                      <span className="text-green-500 text-sm">↗</span>
+                    </div>
+                    <div>
+                      <div className="text-sm font-medium">Latest Invoice</div>
+                      <div className="text-lg font-bold text-green-500">€121.00</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Main Dashboard Content */}
+                <div className="relative rounded-2xl overflow-hidden bg-white">
+                  <div className="p-4">
+                    <div className="flex justify-between items-center mb-6">
+                      <div className="flex gap-2">
+                        <Badge variant="outline" className="bg-primary/5">All</Badge>
+                        <Badge variant="outline" className="bg-white">Invoices</Badge>
+                        <Badge variant="outline" className="bg-white">Expenses</Badge>
+                      </div>
+                      <Button size="sm" className="bg-primary text-white rounded-full">
+                        + New Invoice
+                      </Button>
+                    </div>
+                    
+                    {/* Graph Placeholder */}
+                    <div className="h-48 bg-gradient-to-b from-primary/5 to-transparent rounded-xl mb-4">
+                      <div className="w-full h-full flex items-center justify-center">
+                        <svg className="w-full h-32" viewBox="0 0 400 100">
+                          <path
+                            d="M0,50 C100,20 200,80 400,50"
+                            fill="none"
+                            stroke="#635BFF"
+                            strokeWidth="2"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+
+                    {/* Recent Transactions */}
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 bg-primary/10 rounded-full"></div>
+                          <div>
+                            <div className="text-sm font-medium">Website Design</div>
+                            <div className="text-xs text-gray-500">Invoice #1234</div>
+                          </div>
+                        </div>
+                        <div className="text-sm font-bold">€300.00</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+            
+            {/* Decorative Elements */}
             <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-primary/10 rounded-full blur-2xl"></div>
             <div className="absolute -top-6 -left-6 w-32 h-32 bg-accent/10 rounded-full blur-2xl"></div>
           </div>
