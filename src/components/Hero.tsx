@@ -4,7 +4,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 
 export const Hero = () => {
   return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-white via-primary/5 to-accent/5 py-24 sm:py-32">
+    <div className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-accent/5 to-transparent py-24 sm:py-32">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-8">
           <div className="flex flex-col justify-center">
@@ -50,11 +50,16 @@ export const Hero = () => {
           </div>
           <div className="relative animate-fade-up [animation-delay:600ms]">
             <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-3xl blur-xl"></div>
-            <img
-              src="/api/placeholder/800/600"
-              alt="Financial management dashboard"
-              className="relative rounded-3xl shadow-2xl border border-gray-200/50"
-            />
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent rounded-3xl backdrop-blur-sm"></div>
+              <img
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f"
+                alt="Financial management dashboard"
+                className="relative rounded-3xl shadow-2xl border border-gray-200/50"
+              />
+            </div>
+            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-primary/10 rounded-full blur-2xl"></div>
+            <div className="absolute -top-6 -left-6 w-32 h-32 bg-accent/10 rounded-full blur-2xl"></div>
           </div>
         </div>
       </div>
