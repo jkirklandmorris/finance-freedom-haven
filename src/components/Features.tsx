@@ -1,50 +1,70 @@
-import { CheckCircle2 } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { BadgeDollarSign, FileSpreadsheet, Calculator, Users } from "lucide-react";
 
 const features = [
   {
     title: "Smart Invoicing",
-    description: "Create and send professional invoices in seconds. Track payments and send automatic reminders.",
+    description: "Create and send professional invoices in seconds. Track payments and send automatic reminders for overdue invoices.",
+    icon: BadgeDollarSign,
+    color: "text-primary",
   },
   {
     title: "Expense Tracking",
-    description: "Easily categorize expenses and attach receipts. Perfect for tax time.",
+    description: "Automatically categorize expenses and attach receipts. Generate expense reports and prepare for tax season effortlessly.",
+    icon: FileSpreadsheet,
+    color: "text-secondary",
   },
   {
     title: "Tax Preparation",
-    description: "Automatically calculate tax obligations and generate reports for your tax return.",
+    description: "Real-time tax calculations and estimates. Generate detailed reports for your tax return with a single click.",
+    icon: Calculator,
+    color: "text-accent",
   },
   {
     title: "Client Management",
-    description: "Keep track of client information, projects, and payment history all in one place.",
+    description: "Centralized client information, project tracking, and payment history. Build stronger client relationships.",
+    icon: Users,
+    color: "text-primary",
   },
 ];
 
 export const Features = () => {
   return (
-    <div className="py-24 sm:py-32">
+    <div className="py-24 sm:py-32 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
             Everything You Need to Succeed
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Powerful tools designed specifically for freelancers and sole traders.
+            Powerful tools designed specifically for freelancers and sole traders,
+            helping you focus on what matters most - your business.
           </p>
         </div>
         <div className="mx-auto mt-16 grid max-w-5xl grid-cols-1 gap-8 sm:grid-cols-2">
-          {features.map((feature, index) => (
-            <div
-              key={feature.title}
-              className="animate-fade-up rounded-xl bg-white p-8 shadow-lg [animation-delay:var(--delay)]"
-              style={{ "--delay": `${index * 200}ms` } as React.CSSProperties}
-            >
-              <div className="mb-4 inline-block rounded-lg bg-primary/10 p-2">
-                <CheckCircle2 className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900">{feature.title}</h3>
-              <p className="mt-2 text-gray-600">{feature.description}</p>
-            </div>
-          ))}
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <Card
+                key={feature.title}
+                className="animate-fade-up relative overflow-hidden group hover:shadow-lg transition-all duration-300 [animation-delay:var(--delay)]"
+                style={{ "--delay": `${index * 200}ms` } as React.CSSProperties}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white"></div>
+                <CardContent className="relative p-6">
+                  <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white shadow-sm group-hover:scale-110 transition-transform duration-300">
+                    <Icon className={`w-6 h-6 ${feature.color}`} />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
       </div>
     </div>

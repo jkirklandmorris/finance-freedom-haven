@@ -1,5 +1,7 @@
-import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Check } from "lucide-react";
 
 const tiers = [
   {
@@ -25,6 +27,7 @@ const tiers = [
       "Tax calculation",
     ],
     highlighted: true,
+    badge: "Most Popular",
   },
   {
     name: "Enterprise",
@@ -44,7 +47,7 @@ export const Pricing = () => {
   return (
     <div className="py-24 sm:py-32">
       <div className="container mx-auto px-4">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-2xl text-center mb-16">
           <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
             Simple, Transparent Pricing
           </h2>
@@ -52,52 +55,62 @@ export const Pricing = () => {
             Choose the plan that best fits your needs. All plans include a 14-day free trial.
           </p>
         </div>
-        <div className="mx-auto mt-16 grid max-w-7xl grid-cols-1 gap-8 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 lg:grid-cols-3">
           {tiers.map((tier, index) => (
-            <div
+            <Card
               key={tier.name}
-              className={`animate-fade-up rounded-3xl p-8 ring-1 ring-gray-200 [animation-delay:var(--delay)] ${
+              className={`animate-fade-up relative overflow-hidden [animation-delay:var(--delay)] ${
                 tier.highlighted
-                  ? "bg-primary text-white ring-primary"
-                  : "bg-white"
+                  ? "border-primary/50 shadow-lg scale-105"
+                  : ""
               }`}
               style={{ "--delay": `${index * 200}ms` } as React.CSSProperties}
             >
-              <h3 className={`text-2xl font-bold ${tier.highlighted ? "text-white" : "text-gray-900"}`}>
-                {tier.name}
-              </h3>
-              <p className={`mt-4 text-sm ${tier.highlighted ? "text-white/90" : "text-gray-600"}`}>
-                {tier.description}
-              </p>
-              <p className="mt-6">
-                <span className={`text-4xl font-bold ${tier.highlighted ? "text-white" : "text-gray-900"}`}>
-                  {tier.price}
-                </span>
-                <span className={`text-sm ${tier.highlighted ? "text-white/90" : "text-gray-600"}`}>
-                  /month
-                </span>
-              </p>
-              <ul className="mt-8 space-y-3">
-                {tier.features.map((feature) => (
-                  <li key={feature} className="flex items-center gap-3">
-                    <Check className={`h-5 w-5 ${tier.highlighted ? "text-white" : "text-primary"}`} />
-                    <span className={`text-sm ${tier.highlighted ? "text-white" : "text-gray-600"}`}>
-                      {feature}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              <Button
-                className={`mt-8 w-full ${
-                  tier.highlighted
-                    ? "bg-white text-primary hover:bg-white/90"
-                    : "bg-primary text-white hover:bg-primary/90"
-                }`}
-              >
-                Get Started
-              </Button>
-            </div>
+              {tier.badge && (
+                <Badge
+                  className="absolute top-4 right-4 bg-primary/10 text-primary border-0"
+                >
+                  {tier.badge}
+                </Badge>
+              )}
+              <CardHeader className="p-6">
+                <h3 className="text-2xl font-bold text-gray-900">{tier.name}</h3>
+                <div className="mt-4">
+                  <span className="text-4xl font-bold text-gray-900">
+                    {tier.price}
+                  </span>
+                  <span className="text-sm text-gray-600">/month</span>
+                </div>
+                <p className="mt-2 text-sm text-gray-600">{tier.description}</p>
+              </CardHeader>
+              <CardContent className="p-6 pt-0">
+                <ul className="space-y-3">
+                  {tier.features.map((feature) => (
+                    <li key={feature} className="flex items-center gap-3">
+                      <Check className="h-5 w-5 text-secondary flex-shrink-0" />
+                      <span className="text-sm text-gray-600">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+              <CardFooter className="p-6 pt-0">
+                <Button
+                  className={`w-full ${
+                    tier.highlighted
+                      ? "bg-primary text-white hover:bg-primary/90"
+                      : "bg-gray-50 text-gray-900 hover:bg-gray-100"
+                  }`}
+                >
+                  Get Started
+                </Button>
+              </CardFooter>
+            </Card>
           ))}
+        </div>
+        <div className="mt-16 text-center">
+          <p className="text-sm text-gray-500">
+            Looking for a custom plan? <a href="#" className="text-primary hover:underline">Contact us</a>
+          </p>
         </div>
       </div>
     </div>
