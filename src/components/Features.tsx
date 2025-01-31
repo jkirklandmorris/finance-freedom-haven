@@ -12,13 +12,13 @@ const features = [
     title: "Expense Tracking",
     description: "Automatically categorize expenses and attach receipts. Generate expense reports and prepare for tax season effortlessly.",
     icon: FileSpreadsheet,
-    color: "text-secondary",
+    color: "text-primary",
   },
   {
     title: "Tax Preparation",
     description: "Real-time tax calculations and estimates. Generate detailed reports for your tax return with a single click.",
     icon: Calculator,
-    color: "text-accent",
+    color: "text-primary",
   },
   {
     title: "Client Management",
@@ -30,13 +30,13 @@ const features = [
 
 export const Features = () => {
   return (
-    <div className="py-24 sm:py-32 bg-gray-50">
+    <div className="py-24 sm:py-32 bg-gradient-to-b from-white to-gray-50/50">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
             Everything You Need to Succeed
           </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
+          <p className="mt-6 text-lg leading-8 text-muted-foreground">
             Powerful tools designed specifically for freelancers and sole traders,
             helping you focus on what matters most - your business.
           </p>
@@ -47,18 +47,18 @@ export const Features = () => {
             return (
               <Card
                 key={feature.title}
-                className="animate-fade-up relative overflow-hidden group hover:shadow-lg transition-all duration-300 [animation-delay:var(--delay)]"
+                className="animate-fade-up relative overflow-hidden group hover:shadow-lg transition-all duration-300 [animation-delay:var(--delay)] border-0 bg-white/50 backdrop-blur-sm"
                 style={{ "--delay": `${index * 200}ms` } as React.CSSProperties}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50/50"></div>
                 <CardContent className="relative p-6">
-                  <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white shadow-sm group-hover:scale-110 transition-transform duration-300">
-                    <Icon className={`w-6 h-6 ${feature.color}`} />
+                  <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 group-hover:scale-110 transition-transform duration-300">
+                    <Icon className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-xl font-semibold text-secondary mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed">
                     {feature.description}
                   </p>
                 </CardContent>
