@@ -7,6 +7,7 @@ export const Hero = () => {
     <div className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-accent/5 to-transparent py-24 sm:py-32">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-8">
+          {/* Left column - keep existing code */}
           <div className="flex flex-col justify-center">
             <div className="mb-6 flex flex-wrap gap-2">
               <Badge variant="secondary" className="text-xs bg-secondary/10 text-secondary hover:bg-secondary/20">
@@ -49,6 +50,7 @@ export const Hero = () => {
             </div>
           </div>
           
+          {/* Right column - Dashboard Preview */}
           <div className="relative animate-fade-up [animation-delay:600ms]">
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-3xl blur-xl"></div>
@@ -107,6 +109,10 @@ export const Hero = () => {
                             strokeDasharray="4,4"
                             opacity="0.5"
                           />
+                          <circle cx="0" cy="50" r="4" fill="#635BFF" />
+                          <circle cx="100" cy="20" r="4" fill="#635BFF" />
+                          <circle cx="200" cy="80" r="4" fill="#635BFF" />
+                          <circle cx="400" cy="50" r="4" fill="#635BFF" />
                         </svg>
                       </div>
                     </div>
@@ -114,13 +120,33 @@ export const Hero = () => {
                     <div className="space-y-3">
                       <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 bg-primary/10 rounded-full"></div>
+                          <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                            <svg className="w-4 h-4 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                              <rect x="3" y="3" width="18" height="18" rx="2" />
+                              <path d="M3 9h18" />
+                            </svg>
+                          </div>
                           <div>
                             <div className="text-sm font-medium">Website Design</div>
                             <div className="text-xs text-gray-500">Invoice #1234</div>
                           </div>
                         </div>
                         <div className="text-sm font-bold">€300.00</div>
+                      </div>
+                      
+                      <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center">
+                            <svg className="w-4 h-4 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                            </svg>
+                          </div>
+                          <div>
+                            <div className="text-sm font-medium">Mobile App</div>
+                            <div className="text-xs text-gray-500">Invoice #1235</div>
+                          </div>
+                        </div>
+                        <div className="text-sm font-bold">€750.00</div>
                       </div>
                     </div>
                   </div>
