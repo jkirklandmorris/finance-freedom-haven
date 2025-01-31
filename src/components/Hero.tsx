@@ -55,7 +55,8 @@ export const Hero = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-3xl blur-xl"></div>
               <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-gray-200/50 p-6">
-                <div className="absolute -top-8 left-4 bg-white rounded-xl shadow-lg p-3 animate-fade-up [animation-delay:800ms]">
+                {/* Floating Stats Cards - Now with higher z-index */}
+                <div className="absolute -top-8 left-4 bg-white rounded-xl shadow-lg p-3 animate-fade-up [animation-delay:800ms] z-20">
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
                       <span className="text-primary text-sm">€</span>
@@ -67,7 +68,7 @@ export const Hero = () => {
                   </div>
                 </div>
                 
-                <div className="absolute -right-4 top-1/4 bg-white rounded-xl shadow-lg p-3 animate-fade-up [animation-delay:1000ms]">
+                <div className="absolute -right-4 top-1/4 bg-white rounded-xl shadow-lg p-3 animate-fade-up [animation-delay:1000ms] z-20">
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
                       <span className="text-green-500 text-sm">↗</span>
@@ -79,7 +80,8 @@ export const Hero = () => {
                   </div>
                 </div>
 
-                <div className="relative rounded-2xl overflow-hidden bg-white">
+                {/* Main Dashboard Content */}
+                <div className="relative rounded-2xl overflow-hidden bg-white z-10">
                   <div className="p-4">
                     <div className="flex justify-between items-center mb-6">
                       <div className="flex gap-2">
@@ -154,8 +156,9 @@ export const Hero = () => {
               </div>
             </div>
             
-            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-primary/10 rounded-full blur-2xl"></div>
-            <div className="absolute -top-6 -left-6 w-32 h-32 bg-accent/10 rounded-full blur-2xl"></div>
+            {/* Decorative Elements - Lower z-index */}
+            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-primary/10 rounded-full blur-2xl z-0"></div>
+            <div className="absolute -top-6 -left-6 w-32 h-32 bg-accent/10 rounded-full blur-2xl z-0"></div>
           </div>
         </div>
       </div>
