@@ -48,12 +48,11 @@ export const Hero = () => {
               No credit card required
             </div>
           </div>
+          
           <div className="relative animate-fade-up [animation-delay:600ms]">
-            {/* Main Dashboard Container */}
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-3xl blur-xl"></div>
               <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-gray-200/50 p-6">
-                {/* Floating Stats Cards */}
                 <div className="absolute -top-8 left-4 bg-white rounded-xl shadow-lg p-3 animate-fade-up [animation-delay:800ms]">
                   <div className="flex items-center gap-2">
                     <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
@@ -78,7 +77,6 @@ export const Hero = () => {
                   </div>
                 </div>
 
-                {/* Main Dashboard Content */}
                 <div className="relative rounded-2xl overflow-hidden bg-white">
                   <div className="p-4">
                     <div className="flex justify-between items-center mb-6">
@@ -92,7 +90,6 @@ export const Hero = () => {
                       </Button>
                     </div>
                     
-                    {/* Graph Placeholder */}
                     <div className="h-48 bg-gradient-to-b from-primary/5 to-transparent rounded-xl mb-4">
                       <div className="w-full h-full flex items-center justify-center">
                         <svg className="w-full h-32" viewBox="0 0 400 100">
@@ -102,11 +99,18 @@ export const Hero = () => {
                             stroke="#635BFF"
                             strokeWidth="2"
                           />
+                          <path
+                            d="M0,50 C100,20 200,80 400,50"
+                            fill="none"
+                            stroke="#635BFF"
+                            strokeWidth="1"
+                            strokeDasharray="4,4"
+                            opacity="0.5"
+                          />
                         </svg>
                       </div>
                     </div>
 
-                    {/* Recent Transactions */}
                     <div className="space-y-3">
                       <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                         <div className="flex items-center gap-3">
@@ -124,7 +128,6 @@ export const Hero = () => {
               </div>
             </div>
             
-            {/* Decorative Elements */}
             <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-primary/10 rounded-full blur-2xl"></div>
             <div className="absolute -top-6 -left-6 w-32 h-32 bg-accent/10 rounded-full blur-2xl"></div>
           </div>

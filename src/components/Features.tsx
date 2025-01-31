@@ -7,24 +7,28 @@ const features = [
     description: "Create and send professional invoices in seconds. Track payments and send automatic reminders for overdue invoices.",
     icon: BadgeDollarSign,
     color: "text-primary",
+    bgColor: "bg-primary/10",
   },
   {
     title: "Expense Tracking",
     description: "Automatically categorize expenses and attach receipts. Generate expense reports and prepare for tax season effortlessly.",
     icon: FileSpreadsheet,
-    color: "text-primary",
+    color: "text-accent",
+    bgColor: "bg-accent/10",
   },
   {
     title: "Tax Preparation",
     description: "Real-time tax calculations and estimates. Generate detailed reports for your tax return with a single click.",
     icon: Calculator,
-    color: "text-primary",
+    color: "text-secondary",
+    bgColor: "bg-secondary/10",
   },
   {
     title: "Client Management",
     description: "Centralized client information, project tracking, and payment history. Build stronger client relationships.",
     icon: Users,
     color: "text-primary",
+    bgColor: "bg-primary/10",
   },
 ];
 
@@ -52,8 +56,8 @@ export const Features = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50/50"></div>
                 <CardContent className="relative p-6">
-                  <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 group-hover:scale-110 transition-transform duration-300">
-                    <Icon className="w-6 h-6 text-primary" />
+                  <div className={`mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full ${feature.bgColor} group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon className={`w-6 h-6 ${feature.color}`} />
                   </div>
                   <h3 className="text-xl font-semibold text-secondary mb-2">
                     {feature.title}
